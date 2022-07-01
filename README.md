@@ -24,9 +24,9 @@ It is always recommended to reboot the server once the upgrade is done.
 
 ### STEP 2  Create a new user
 
-    sudo adduser dcode-frappe
-    sudo usermod -aG sudo dcode-frappe
-    su - dcode-frappe
+    sudo adduser erpnext
+    sudo usermod -aG sudo erpnext
+    su - erpnext
 
 ### STEP 3 Install git
 Git is the most commonly used version control system. Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific versions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source.
