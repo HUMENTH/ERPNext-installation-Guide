@@ -66,7 +66,7 @@ Now install the below package to manage the repository, usually, Ubuntu 20.04 ha
 ### STEP 9 install wkhtmltopdf
 Wkhtmltopdf is an open source simple and much effective command-line shell utility that enables user to convert any given HTML (Web Page) to PDF document or an image (jpg, png, etc)
 
-    sudo apt-get install xvfb libfontconfig wkhtmltopdf -y
+    sudo apt install xvfb libfontconfig wkhtmltopdf -y
     sudo reboot
 
 ### STEP 10 Install MariaDB 10.6.8 stable package
