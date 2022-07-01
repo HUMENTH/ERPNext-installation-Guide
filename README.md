@@ -113,7 +113,9 @@ Modify above as below
 
     collation-server = utf8mb4_unicode_ci​
 
-You can also locate my.cnf and edit the below configuration.
+Now press (Ctrl-S) then (Ctrl-X) to exit
+
+And also locate my.cnf and edit the below configuration.
 
     sudo nano /etc/mysql/my.cnf
 
