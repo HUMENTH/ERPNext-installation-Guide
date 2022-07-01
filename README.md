@@ -45,6 +45,7 @@ Pip is a package manager for Python. It's a tool that allows you to install and 
 
     sudo apt install python3-setuptools python3-pip -y
     python3 -m pip install --upgrade pip
+    export PATH="/home/erpnext/.local/bin:$PATH"
 
 ### STEP 6 Install virtualenv
 virtualenv is a tool for creating isolated Python environments containing their own copy ofpython, pip, and their own place to keep libraries installed from PyPI. It's designed to allow you to work on multiple projects with different dependencies at the same time on the same machine.
