@@ -151,19 +151,6 @@ Node.js is an open source, cross-platform runtime environment for developing ser
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     sudo apt-get install -y nodejs
 
-#### Optional
-
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-Now at this step close the terminal and open it again. Or open a new terminal to continue with the next step. Ensure you do it. Once you have done run the below command to install the node 
-
-    sudo nvm install 14
-
 Now it has been installed you can now check the version by typing the below command
 
     node -v
