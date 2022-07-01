@@ -16,7 +16,7 @@
 ### STEP 1 Update Server
 It is always a good idea to upgrade the Ubuntu package if anything is available, run the below command to upgrade and update.
     
-    sudo apt update && ssudo apt upgrade -y
+    sudo apt update && sudo apt upgrade -y
 
 It is always recommended to reboot the server once the upgrade is done.
 
@@ -331,3 +331,8 @@ THE END
 
     Reload supervisor
       sudo service supervisor restart
+
+
+Source & Credits:
+https://syncbricks.com/erpnext-manual-install-ubuntu-20-04/
+https://github.com/D-codE-Hub/ERPNext-installation-Guide
