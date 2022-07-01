@@ -134,7 +134,7 @@ Now press (Ctrl-S) then (Ctrl-X) to exit
 ### STEP 13 MySQL Native Password Setup
 Now you must ensure that the native password is configured, which will help the frappe framework automatically create the database when you create the site. For this, you will need to login to MySQL as root and then update the root user or the user that you want to use. I will be using root for my installation so use the below commands
 
-    sudo mysql -u root -p
+    mysql -u root -p        # if this not work try sudo mysql -u root -p
     USE mysql;
     UPDATE user SET plugin='mysql_native_password' WHERE User='root';​
     FLUSH PRIVILEGES;
