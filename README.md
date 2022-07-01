@@ -31,7 +31,7 @@ It is always recommended to reboot the server once the upgrade is done.
 ### STEP 3 Install git
 Git is the most commonly used version control system. Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific versions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source.
     
-    sudo apt install git
+    sudo apt install git -y
 
 ### STEP 4 install python-dev
 python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for high performance.
