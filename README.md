@@ -242,7 +242,7 @@ If you have not created subdomain, then create a subdomain (preferred) erp.YOURD
 Run the below command to install ERPNext to the site that you have recently created
 
     bench --site erp.YOURDOMAIN.COM install-app erpnext
-    
+
 it will take a few moments to install the erpnext application on your site.
 
 Now as we created a new site, we need to make sure this is our default site, so we have to tell bench to use this site as default by using the below command
@@ -259,12 +259,21 @@ ERPNext only supports NGINX, so you can't use apache2 on this server. You have t
 
 You can do the following two tests to confirm apache has been removed:
 
-Run """which apache2""" - should return a blank line
-Run """sudo service apache2 start""" - should return apache2: unrecognized service
+Run
+
+    which apache2
+
+This should return a blank line
+Run
+
+    sudo service apache2 start
+
+This should return apache2: unrecognized service
 
 We will use a manual bench set up for production by using the below command.
 
 Automatic Method:
+
     sudo bench setup production USERNAME
 
 Manual Method:
