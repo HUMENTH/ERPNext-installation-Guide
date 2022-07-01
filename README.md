@@ -94,18 +94,17 @@ the following command
     
     sudo mysql_secure_installation
 
-Prompt
-Enter current password for root (enter for none): (safely press Enter)
+### Prompt
 
-Switch to unix_socket authentication [Y/n] (Press "Y")
-
-Change the root password? [Y/n] (Press "Y")
-New password: ("Enter new Password")
-Re-enter new password: ("Re-enter new Password")
-Remove anonymous users? [Y/n] (Press "Y")
-Disallow root login remotely? [Y/n] (Press "Y")
-Remove test database and access to it? [Y/n] (Press "Y")
-Reload privilege tables now? [Y/n] (Press "Y")
+        Enter current password for root (enter for none): (safely press Enter)
+        Switch to unix_socket authentication [Y/n] (Press "Y")
+        Change the root password? [Y/n] (Press "Y")
+        New password: ("Enter new Password")
+        Re-enter new password: ("Re-enter new Password")
+        Remove anonymous users? [Y/n] (Press "Y")
+        Disallow root login remotely? [Y/n] (Press "Y")
+        Remove test database and access to it? [Y/n] (Press "Y")
+        Reload privilege tables now? [Y/n] (Press "Y")
     
 ### STEP 9 MySQL database development files
 
