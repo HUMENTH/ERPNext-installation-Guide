@@ -245,12 +245,12 @@ To create a site we will use the bench command as below
 
 Now site is deployed, by default frappe application will be installed at site. Don’t open the site yet, because we need to install ERPnext to the site.
 
-## Make sure your sub-domain properly configured to access this server, where you hosted your domain.
+#### Make sure your sub-domain properly configured to access this server, where you hosted your domain.
 
 If you have not created subdomain, then create a subdomain (preferred) erp.YOURDOMAIN.COM. Then Change DNS records as below:
-    Hostname                Type    Value               TTL
-    erp.YOURDOMAIN.COM      A       ERPNext-Server-IP   1800
-    www.erp.YOURDOMAIN.COM  A       ERPNext-Server-IP   1800
+        Hostname                Type    Value               TTL
+        erp.YOURDOMAIN.COM      A       ERPNext-Server-IP   1800
+        www.erp.YOURDOMAIN.COM  A       ERPNext-Server-IP   1800
 
 Run the below command to install ERPNext to the site that you have recently created
 
