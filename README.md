@@ -69,6 +69,7 @@ Wkhtmltopdf is an open source simple and much effective command-line shell utili
     sudo apt install xvfb libfontconfig wkhtmltopdf -y
     sudo reboot
 after reboot
+
     sudo su - erpnext
 
 ### STEP 10 Install MariaDB 10.6.8 stable package
