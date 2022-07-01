@@ -241,8 +241,8 @@ If you have not created subdomain, then create a subdomain (preferred) erp.YOURD
 
 Run the below command to install ERPNext to the site that you have recently created
 
-    bench --site erp.YOURDOMAIN.COM install-app erpnext​
-
+    bench --site erp.YOURDOMAIN.COM install-app erpnext
+    
 it will take a few moments to install the erpnext application on your site.
 
 Now as we created a new site, we need to make sure this is our default site, so we have to tell bench to use this site as default by using the below command
