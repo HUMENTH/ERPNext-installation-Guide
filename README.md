@@ -98,7 +98,6 @@ Prompt
 Enter current password for root (enter for none): (safely press Enter)
 
 Switch to unix_socket authentication [Y/n] (Press "Y")
-
 Change the root password? [Y/n] (Press "Y")
 New password: ("Enter new Password")
 Re-enter new password: ("Re-enter new Password")
