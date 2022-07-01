@@ -36,7 +36,7 @@ Git is the most commonly used version control system. Git tracks the changes you
 ### STEP 4 install python-dev
 python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for high performance.
 
-    sudo apt install python3-dev python-dev -y
+    sudo apt install python3-dev -y
 
 ### STEP 5 Install setuptools and pip (Python's Package Manager).
 Setuptools is a collection of enhancements to the Python distutils that allow developers to more easily build and distribute Python packages, especially ones that have dependencies on other packages. Packages built and distributed using setuptools look to the user like ordinary Python packages based on the distutils.
@@ -44,8 +44,6 @@ Setuptools is a collection of enhancements to the Python distutils that allow de
 Pip is a package manager for Python. It's a tool that allows you to install and manage additional libraries and dependencies that are not distributed as part of the standard library.
 
     sudo apt install python3-setuptools python3-pip -y
-    python3 -m pip install --upgrade pip
-    export PATH="/home/erpnext/.local/bin:$PATH"
 
 ### STEP 6 Install virtualenv
 virtualenv is a tool for creating isolated Python environments containing their own copy ofpython, pip, and their own place to keep libraries installed from PyPI. It's designed to allow you to work on multiple projects with different dependencies at the same time on the same machine.
