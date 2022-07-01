@@ -84,8 +84,7 @@ IMPORTANT: During this installation you'll be prompted to set the MySQL root pas
 If you are not prompted for the same You can initialize the MySQL server setup by executing the following command
     
     sudo mysql_secure_installation
-
-### Prompt
+#### Prompt
 
         Enter current password for root (enter for none):   (safely press Enter)
         Switch to unix_socket authentication [Y/n]          (Press "Y")
