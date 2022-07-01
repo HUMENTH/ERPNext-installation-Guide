@@ -13,8 +13,7 @@
       cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
       NGINX                                         (proxying multitenant sites in production)
 
-
-### STEP 0 Update Server
+### STEP 1 Update Server
 It is always a good idea to upgrade the Ubuntu package if anything is available, run the below command to upgrade and update.
     
     sudo apt update && ssudo apt upgrade -y
@@ -23,20 +22,26 @@ It is always recommended to reboot the server once the upgrade is done.
 
     sudo reboot
 
-### STEP 1 Install git
+### STEP 2  Create a new user
+
+    sudo adduser dcode-frappe
+    sudo usermod -aG sudo dcode-frappe
+    su - dcode-frappe
+
+### STEP 3 Install git
 Git is the most commonly used version control system. Git tracks the changes you make to files, 
 so you have a record of what has been done, and you can revert to specific versions should you ever need to. 
 Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source.
     
     sudo apt install git
 
-### STEP 2 install python-dev
+### STEP 4 install python-dev
 python-dev is the package that contains the header files for the Python C API, 
 which is used by lxml because it includes Python C extensions for high performance.
 
     sudo apt install python3-dev python-dev -y
 
-### STEP 3 Install setuptools and pip (Python's Package Manager).
+### STEP 5 Install setuptools and pip (Python's Package Manager).
 Setuptools is a collection of enhancements to the Python distutils that allow developers 
 to more easily build and distribute Python packages, especially ones that have 
 dependencies on other packages. Packages built and distributed using setuptools 
@@ -47,7 +52,7 @@ additional libraries and dependencies that are not distributed as part of the st
 
     sudo apt install python3-setuptools python3-pip -y
 
-### STEP 4 Install virtualenv
+### STEP 6 Install virtualenv
 virtualenv is a tool for creating isolated Python environments containing their own copy of
 python , pip , and their own place to keep libraries installed from PyPI.
 It's designed to allow you to work on multiple projects with different dependencies 
@@ -55,40 +60,34 @@ at the same time on the same machine.
     
     sudo apt install virtualenv -y
 
-### STEP 5 Install Redis server
+### STEP 7 Install Redis server
 Resid can be used to process and analyze data in memory, this is prerequisite for ERPNext.
 
     sudo apt install redis-server -y
 
-### STEP 6 Install Software- properties-common
+### STEP 8 Install Software- properties-common
 Now install the below package to manage the repository, usually, Ubuntu 20.04 has already installed it, but for the safe side, we will run this command.
 
     sudo apt install software-properties-common -y
  if prompt for "Override local changes to /etc/pam.d/common-*?" on PAM Configuration, then safely choose "No".
 
-### STEP 7 install wkhtmltopdf
+### STEP 9 install wkhtmltopdf
 Wkhtmltopdf is an open source simple and much effective command-line shell utility that enables 
 user to convert any given HTML (Web Page) to PDF document or an image (jpg, png, etc)
 
     sudo apt-get install xvfb libfontconfig wkhtmltopdf -y
     sudo reboot
 
-### STEP 8 Install MariaDB 10.6.8 stable package
+### STEP 10 Install MariaDB 10.6.8 stable package
 MariaDB is developed as open source software and as a relational database it provides an SQL interface 
 for accessing data.
-
-open this link
-
-    https://downloads.mariadb.org/mariadb/repositories/#mirror=piconets
- 
-For ubuntu 20.04
 
     sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
     sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://ftp.icm.edu.pl/pub/unix/database/mariadb/repo/10.6.8/ubuntu focal main'
     sudo apt update && sudo apt upgrade -y
     sudo apt install mariadb-server -y
      
-IMPORTANT :During this installation you'll be prompted to set the MySQL root password.
+IMPORTANT: During this installation you'll be prompted to set the MySQL root password.
 If you are not prompted for the same You can initialize the MySQL server setup by executing 
 the following command
     
@@ -106,11 +105,11 @@ the following command
         Remove test database and access to it? [Y/n]        (Press "Y")
         Reload privilege tables now? [Y/n]                  (Press "Y")
     
-### STEP 9 MySQL database development files
+### STEP 11 MySQL database development files
 
     sudo apt install libmysqlclient-dev -y
 
-### STEP 10 Edit the mariadb configuration ( unicode character encoding )
+### STEP 12 Edit the mariadb configuration ( unicode character encoding )
 
 You need to ensure to change the default character set of MySQL or MariaDB to Unicode instead of general. To do this you will need to edit the maria DB configuration file which is in this version located at /etc/mysql/mariadb.conf.d directory so you can directly edit this or locate the folder and then edit the file by typing the below command
 
@@ -141,7 +140,7 @@ Make sure your configuration has the below lines in the file
 
 Now press (Ctrl-S) then (Ctrl-X) to exit
 
-### STEP 11 MySQL Native Password Setup
+### STEP 13 MySQL Native Password Setup
 Now you must ensure that the native password is configured, which will help the frappe framework automatically create the database when you create the site. For this, you will need to login to MySQL as root and then update the root user or the user that you want to use. I will be using root for my installation so use the below commands
 
     sudo mysql -u root -p
@@ -154,7 +153,7 @@ Now MySQL or MariaDB setup is now ready, let us now restart eh service. You can 
 
     sudo service mysql restart
 
-### STEP 12 Install Node Using NVM
+### STEP 14 Install Node Using NVM
 Node installation is recommended using NVM (Node Version Manager) therefore let us first install NVM. To install NVM use the below command.
 
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
@@ -167,7 +166,7 @@ Now it has been installed you can now check the version by typing the below comm
 
     node -v
 
-### STEP 13 Install Yarn using NPM
+### STEP 15 Install Yarn using NPM
 Now we will install Yarn which is a software packaging system developed by Facebook for Node.js, this is open source, so we will install it using npm
 
     sudo npm install -g yarn
@@ -183,7 +182,7 @@ Now let us install the bench
 
 It will install a bench and will give you a message that the bench is installed successfully, now you can use various bench commands. Starting with the command “bench”
 
-### STEP 14 Install Frappe-Bench Environment using bench CLI
+### STEP 15 Install Frappe-Bench Environment using bench CLI
 Let us now create the frappe-bench environment. Here you have to decide the purpose for which you are installing ERPNext, it is just for test or training then you can use the latest version, which will be developing and may not be stable. However you can also use a stable version by choosing a specific version, You can search and learn which is the stable version today.
 
 To deploy the latest frappe-bench environment make sure to run the command while you are in your home directory or your user and use the below command.
@@ -222,7 +221,7 @@ get the ERPNext app
 create a new-site for your ERP Installation
 Install the ERPNext app on site created.
 
-### STEP 15 ERPNext Installation on Frappe Environment
+### STEP 16 ERPNext Installation on Frappe Environment
 
 make sure that your working directory is frappe-bench.
 
@@ -246,7 +245,7 @@ To create a site we will use the bench command as below
 
 Now site is deployed, by default frappe application will be installed at site. Don’t open the site yet, because we need to install ERPnext to the site.
 
-#Make sure your sub-domain properly configured to access this server, where you hosted your domain.
+## Make sure your sub-domain properly configured to access this server, where you hosted your domain.
 
 If you have not created subdomain, then create a subdomain (preferred) erp.YOURDOMAIN.COM. Then Change DNS records as below:
     Hostname                Type    Value               TTL
@@ -265,7 +264,7 @@ Now as we created a new site, we need to make sure this is our default site, so 
 
 Now ERPNext is installed in your server and you are ready to configure it. But beofre configuring there are few more steps in case you want o use this for production.
 
-### STEP 16 ERPNext Setup for Production
+### STEP 17 ERPNext Setup for Production
 
 ERPNext only supports NGINX, so you can't use apache2 on this server. You have to remove Apache2 from your server.
 
@@ -282,7 +281,7 @@ Automatic Method:
     sudo bench setup production USERNAME
 
 Manual Method:
-### Setup Bench Supervisor
+### STEP 18 Setup Bench Supervisor
 
     sudo apt -y install supervisor
     bench setup supervisor
@@ -290,7 +289,7 @@ Manual Method:
 
 in case the supervisor is not installed you can use the below command
 
-### Setup Bench NginX
+### STEP 19 Setup Bench NginX
 
     bench setup nginx
     sudo ln -s `pwd`/config/nginx.conf /etc/nginx/conf.d/frappe-bench.conf​
@@ -299,102 +298,20 @@ Now you will get a message saying that erp.YOURDOMAIN.COM is on port 80
 
 You can simply open erp.YOURDOMAIN.COM in your web browser and check it will work fine.
 
-### STEP ERPNext SSL Installation NginX
+### STEP 20 ERPNext SSL Installation NginX
 
 Now your site is ready, you must configure the SSL certificate, I have explained that in simple steps.
 
 First, we will install spanny package as below
 
     bench config dns_multitenant on
-    sudo -H pip3 install certbot
-    sudo -H pip3 install cryptography==37.0.2
+    sudo pip3 install certbot
+    sudo pip3 install cryptography==37.0.2
     sudo bench setup lets-encrypt erp.YOURDOMAIN.COM
 
-### STEP 8 install Redis
-Redis is an open source (BSD licensed), in-memory data structure store, used as a database, 
-cache, and message broker.
-    
-    sudo apt-get install redis-server
-
-### STEP 9 install Node.js 14.X package
-Node.js is an open source, cross-platform runtime environment for developing server-side and 
-networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js
-runtime on OS X, Microsoft Windows, and Linux.
-
-    sudo apt-get install curl
-    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-
-### STEP 10  install Yarn
-Yarn is a JavaScript package manager that aims to be speedy, deterministic, and secure. 
-See how easy it is to drop yarn in where you were using npm before, and get faster, more reliable installs.
-Yarn is a package manager for JavaScript.
-    
-    sudo npm install -g yarn
-
-### STEP 11 install wkhtmltopdf
-Wkhtmltopdf is an open source simple and much effective command-line shell utility that enables 
-user to convert any given HTML (Web Page) to PDF document or an image (jpg, png, etc)
-
-    sudo apt-get install xvfb libfontconfig wkhtmltopdf
-    
-### if you have to setup production server go to Step 16 else continue 
-
-### STEP 12 install frappe-bench
-
-    sudo -H pip3 install frappe-bench
-
-IMPORTANT: you may wish to log out and log back into your terminal 
-before next step and You must login.
-    
-    bench --version
-    
-### STEP 13 initilise the frappe bench & install frappe latest version 
-
-    bench init frappe-bench --frappe-branch version-13
-    
-    cd frappe-bench/
-    bench start
-    
-### STEP 14 create a site in frappe bench 
-    
-    bench new-site dcode.com
-
-### STEP 15 install ERPNext latest version in bench & site
-
-    bench get-app erpnext --branch version-13
-    ###OR
-    bench get-app https://github.com/frappe/erpnext --branch version-13
-
-    bench --site dcode.com install-app erpnext
-    
-    bench start
+THE END
 
 
-#
-#
-#
-### Optional step for cratetind production setup
-
-### STEP 16  Create a new user
-
-    sudo adduser dcode-frappe
-    sudo usermod -aG sudo dcode-frappe
-    su - dcode-frappe
-    
-### Follow the steps from Step 12 to Step 15
-
-### Step 17 setup production
-    
-    sudo bench setup production dcode-frappe
-    bench restart
-    
-  Open the 0.0.0.0 or server IP in web browser and login to production server
-    
-    
-    
-    
-  
   #### Port cofiguration for multiple site
   
   
@@ -425,21 +342,3 @@ before next step and You must login.
 
     Reload supervisor
       sudo service supervisor restart
-    
-### others
-
-      sudo add-apt-repository ppa:certbot/certbot
-      sudo apt update
-      sudo apt install python-certbot-nginx
-      sudo certbot --nginx -d example.com
-      
-      ./env/bin/python -m pip install -q -U -e /apps/frappe
-    
-    
-    
-    
-    
-    
-    
-    
-    
