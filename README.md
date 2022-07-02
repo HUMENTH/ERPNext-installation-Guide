@@ -13,6 +13,8 @@
       cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
       NGINX                                         (proxying multitenant sites in production)
 
+##### Use all commands sererate (One by One)
+
 ### STEP 1 Update Server
 It is always a good idea to upgrade the Ubuntu package if anything is available, run the below command to upgrade and update.
     
@@ -297,8 +299,7 @@ THE END
   
   
       bench use sitename
-  
- 
+
 
     Switch off DNS based multitenancy (once)
 
