@@ -3,10 +3,10 @@
 
 ### Pre-requisites 
 
-      Python 3.6+
-      Node.js 14+
+      Python 3.8
+      Node.js 14
       Redis 5                                       (caching and real time updates)
-      MariaDB 10.3.x / Postgres 9.5.x               (to run database driven apps)
+      MariaDB 10.6.x / Postgres 9.5.x               (to run database driven apps)
       yarn 1.12+                                    (js dependency manager)
       pip 20+                                       (py dependency manager)
       wkhtmltopdf (version 0.12.5 with patched qt)  (for pdf generation)
@@ -270,14 +270,14 @@ Run
 
 This should return apache2: unrecognized service
 
-We will use a manual bench set up for production by using the below command.
+We will use an automatic bench set up for production by using the below command.
 
-Automatic Method:
+### STEP 20 (1) Automatic Method:
 
     sudo bench setup production USERNAME
 
 Manual Method:
-### STEP 20 Setup Bench Supervisor
+### STEP 20 (2.1) Setup Bench Supervisor
 
     sudo apt -y install supervisor
     bench setup supervisor
@@ -285,7 +285,7 @@ Manual Method:
 
 in case the supervisor is not installed you can use the below command
 
-### STEP 21 Setup Bench NginX
+### STEP 20 (2.2) Setup Bench NginX
 
     bench setup nginx
     sudo ln -s `pwd`/config/nginx.conf /etc/nginx/conf.d/frappe-bench.conf​
@@ -294,15 +294,15 @@ Now you will get a message saying that erp.YOURDOMAIN.COM is on port 80
 
 You can simply open erp.YOURDOMAIN.COM in your web browser and check it will work fine.
 
-### STEP 22 ERPNext SSL Installation NginX
+### STEP 21 ERPNext SSL Installation NginX
 
 Now your site is ready, you must configure the SSL certificate, I have explained that in simple steps.
 
 First, we will install spanny package as below
 
     bench config dns_multitenant on
-    sudo pip3 install certbot
     sudo pip3 install cryptography==37.0.2
+    sudo pip3 install certbot
     sudo bench setup lets-encrypt erp.YOURDOMAIN.COM
 
 THE END
