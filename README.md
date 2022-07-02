@@ -327,6 +327,7 @@ THE END
 
 
 Source & Credits:
+
 https://syncbricks.com/erpnext-manual-install-ubuntu-20-04/
 
 https://github.com/D-codE-Hub/ERPNext-installation-Guide
