@@ -33,7 +33,7 @@ Git is the most commonly used version control system. Git tracks the changes you
     
     sudo apt install git -y
 
-### STEP 4 install python-dev
+### STEP 4 Install python3-dev
 python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for high performance.
 
     sudo apt install python3-dev -y
@@ -55,7 +55,7 @@ Resid can be used to process and analyze data in memory, this is prerequisite fo
 
     sudo apt install redis-server -y
 
-### STEP 8 Install Software- properties-common
+### STEP 8 Install software-properties-common
 Now install the below package to manage the repository, usually, Ubuntu 20.04 has already installed it, but for the safe side, we will run this command.
 
     sudo apt install software-properties-common -y
@@ -66,6 +66,7 @@ Wkhtmltopdf is an open source simple and much effective command-line shell utili
 
     sudo apt install xvfb libfontconfig wkhtmltopdf -y
     sudo reboot
+
 after reboot
 
     sudo su - erpnext
@@ -186,27 +187,9 @@ Now you can use various bench commands by changing the directory. So you can nee
 
     cd frappe-bench
 
-Once you type bench you will see the various commands that bench cli has. Don’t worry, we will not be using all the commands, we just need to install EPRNext but have a quick look at these commands.
+Once you type "bench" you will see the various commands that bench cli has. Don’t worry, we will not be using all the commands, we just need to install EPRNext but have a quick look at these commands.
 
     bench
-
-To start bench you can type the command
-
-    bench start
-
-Just wait for it, it will start the bench and you will see that it will give you information saying that the server is now running at port 8000. Now you can open the server in the browser with port 8000.
-
-You will give nothing on-page, it will say page not found.
-
-Because we have installed the environment, we have not yet created any site in the environment.
-
-Frappe Environment has Applications and Sites. When you install frappe-bench one application (default) frappe will be available for you to install on any site.
-
-If you just want to install the application with no modules you can do that, but we have to install ERPNext. Below will help you to;
-
-get the ERPNext app
-create a new-site for your ERP Installation
-Install the ERPNext app on site created.
 
 ### STEP 18 ERPNext Installation on Frappe Environment
 
@@ -263,21 +246,23 @@ Run
 
     which apache2
 
-This should return a blank line
+This should return a blank line.
+
 Run
 
     sudo service apache2 start
 
 This should return apache2: unrecognized service
 
+### STEP 20 Production Deployment
 We will use an automatic bench set up for production by using the below command.
 
-### STEP 20 (1) Automatic Method:
+#### Automatic Method:
 
     sudo bench setup production USERNAME
 
-Manual Method:
-#### STEP 20 (2.1) Setup Bench Supervisor
+#### Manual Method:
+##### Setup Bench Supervisor
 
     sudo apt -y install supervisor
     bench setup supervisor
@@ -285,7 +270,7 @@ Manual Method:
 
 in case the supervisor is not installed you can use the below command
 
-#### STEP 20 (2.2) Setup Bench NginX
+##### Setup Bench NginX
 
     bench setup nginx
     sudo ln -s `pwd`/config/nginx.conf /etc/nginx/conf.d/frappe-bench.conf​
