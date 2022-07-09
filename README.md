@@ -201,7 +201,7 @@ Now you need to get the app from the frappe repository, have two options, either
 
 To install the current package which is not stable you can use the below command
 
-    bench get-app erpnext https://github.com/frappe/erpnext​
+    bench get-app erpnext https://github.com/frappe/erpnext
 
 I will be installing ERPNext Version 13, for that, I will be using the below command
 
