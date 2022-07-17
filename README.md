@@ -3,7 +3,7 @@
 
 ### Pre-requisites 
 
-      Python 3.8
+      Python 3.8+
       Node.js 14
       Redis 5                                       (caching and real time updates)
       MariaDB 10.6.x / Postgres 9.5.x               (to run database driven apps)
