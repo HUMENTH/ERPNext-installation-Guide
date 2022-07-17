@@ -112,7 +112,7 @@ Once the file opens you need to locate the line where collation-server says gene
 
 Modify above as below
 
-    collation-server = utf8mb4_unicode_ci​
+    collation-server = utf8mb4_unicode_ci
 
 Now press (Ctrl-S) then (Ctrl-X) to exit
 
@@ -137,7 +137,7 @@ Now you must ensure that the native password is configured, which will help the 
 
     mysql -u root -p        # if this not work try sudo mysql -u root -p
     USE mysql;
-    UPDATE user SET plugin='mysql_native_password' WHERE User='root';​
+    UPDATE user SET plugin='mysql_native_password' WHERE User='root';
     FLUSH PRIVILEGES;
     EXIT;
 
