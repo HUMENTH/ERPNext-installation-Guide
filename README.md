@@ -177,8 +177,8 @@ Let us now create the frappe-bench environment. Here you have to decide the purp
 
 To deploy the latest frappe-bench environment make sure to run the command while you are in your home directory or your user and use the below command.
 
-    bench init frappe-bench​
-
+    bench init frappe-bench
+    
 To choose a specif version you can use the branch version. I will be using branch version 13 in this installation. You can look for the latest stable release of the frappe environment.
 
     bench init frappe-bench --verbose --frappe-branch version-13
