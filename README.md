@@ -148,9 +148,9 @@ Now MySQL or MariaDB setup is now ready, let us now restart eh service. You can 
 ### STEP 14 Install Node.js 14.X package
 Node.js is an open source, cross-platform runtime environment for developing server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.
 
-    sudo apt-get install curl
+    sudo apt install curl
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-    sudo apt-get install -y nodejs
+    sudo apt install -y nodejs
 
 Now it has been installed you can now check the version by typing the below command
 
