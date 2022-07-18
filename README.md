@@ -179,7 +179,7 @@ To deploy the latest frappe-bench environment make sure to run the command while
 
     bench init frappe-bench
     
-To choose a specif version you can use the branch version. I will be using branch version 13 in this installation. You can look for the latest stable release of the frappe environment.
+To choose a specific version you can use the branch version. I will be using branch version 13 in this installation. You can look for the latest stable release of the frappe environment.
 
     bench init frappe-bench --verbose --frappe-branch version-13
 
