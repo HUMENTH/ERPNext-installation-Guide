@@ -266,12 +266,11 @@ We will use an automatic bench set up for production by using the below command.
 
 #### Manual Method:
 ##### Setup Bench Supervisor
+In case the supervisor is not installed you can use the below command
 
     sudo apt -y install supervisor
     bench setup supervisor
     sudo ln -s `pwd`/config/supervisor.conf /etc/supervisor/conf.d/frappe-bench.conf​
-
-in case the supervisor is not installed you can use the below command
 
 ##### Setup Bench NginX
 
