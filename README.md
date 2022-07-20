@@ -220,6 +220,7 @@ Now site is deployed, by default frappe application will be installed at site. D
 #### Make sure your sub-domain properly configured to access this server, where you hosted your domain.
 
 If you have not created subdomain, then create a subdomain (preferred) erp.YOURDOMAIN.COM. Then Change DNS records as below:
+
         Hostname                Type    Value               TTL
         erp.YOURDOMAIN.COM      A       ERPNext-Server-IP   1800
         www.erp.YOURDOMAIN.COM  A       ERPNext-Server-IP   1800
