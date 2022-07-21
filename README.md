@@ -9,7 +9,7 @@
       MariaDB 10.6.x                                (to run database driven apps)
       yarn 1.12+                                    (js dependency manager)
       pip 20+                                       (py dependency manager)
-      wkhtmltopdf (version 0.12.5 with patched qt)  (for pdf generation)
+      wkhtmltopdf (version 0.12.5+ with patched qt)  (for pdf generation)
       cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
       NGINX                                         (proxying multitenant sites in production)
 
