@@ -6,7 +6,7 @@
       Python 3.8+
       Node.js 14
       Redis 5                                       (caching and real time updates)
-      MariaDB 10.6.x / Postgres 9.5.x               (to run database driven apps)
+      MariaDB 10.6.x                                (to run database driven apps)
       yarn 1.12+                                    (js dependency manager)
       pip 20+                                       (py dependency manager)
       wkhtmltopdf (version 0.12.5 with patched qt)  (for pdf generation)
