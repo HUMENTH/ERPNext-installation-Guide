@@ -24,6 +24,20 @@ It is always recommended to reboot the server once the upgrade is done.
 
     sudo reboot
 
+### Step 1.1 Configuring Locales
+
+    sudo localectl set-keymap us && sudo localectl set-locale LANG=en_US.UTF8
+    sudo nano /etc/environment
+Now add the following content:
+
+    LC_ALL=en_US.UTF-8
+    LC_CTYPE=en_US.UTF-8
+    LANG=en_US.UTF-8
+Save and close the file.
+Reboot your server to apply all changes:
+
+      sudo reboot
+
 ### STEP 2  Create a new user
 
     sudo adduser erpnext
