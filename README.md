@@ -6,10 +6,10 @@
       Python 3.8+
       Node.js 14
       Redis 5                                       (caching and real time updates)
-      MariaDB 10.6.x                                (to run database driven apps)
+      MariaDB 10.3.x                                (to run database driven apps)
       yarn 1.12+                                    (js dependency manager)
       pip 20+                                       (py dependency manager)
-      wkhtmltopdf (version 0.12.5+ with patched qt)  (for pdf generation)
+      wkhtmltopdf (version 0.12.5+ with patched qt) (for pdf generation)
       cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
       NGINX                                         (proxying multitenant sites in production)
 
@@ -73,11 +73,11 @@ after reboot
 
     sudo su - erpnext
 
-### STEP 10 Install MariaDB 10.6.8 stable package
+### STEP 10 Install MariaDB 10.3 stable package
 MariaDB is developed as open source software and as a relational database it provides an SQL interface for accessing data.
 
     sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
-    sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://ftp.icm.edu.pl/pub/unix/database/mariadb/repo/10.6.8/ubuntu focal main'
+    sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://ftp.icm.edu.pl/pub/unix/database/mariadb/repo/10.3/ubuntu focal main'
     sudo apt update && sudo apt upgrade -y
     sudo apt install mariadb-server -y
      
