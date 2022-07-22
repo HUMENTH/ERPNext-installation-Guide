@@ -284,12 +284,12 @@ In case the supervisor is not installed you can use the below command
 
     sudo apt -y install supervisor
     bench setup supervisor
-    sudo ln -s `pwd`/config/supervisor.conf /etc/supervisor/conf.d/frappe-bench.conf​
+    sudo ln -s `pwd`/config/supervisor.conf /etc/supervisor/conf.d/frappe-bench.conf
 
 ##### Setup Bench NginX
 
     bench setup nginx
-    sudo ln -s `pwd`/config/nginx.conf /etc/nginx/conf.d/frappe-bench.conf​
+    sudo ln -s `pwd`/config/nginx.conf /etc/nginx/conf.d/frappe-bench.conf
 
 Now you will get a message saying that erp.YOURDOMAIN.COM is on port 80
 
