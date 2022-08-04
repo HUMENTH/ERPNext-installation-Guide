@@ -77,8 +77,8 @@ after reboot
 ### STEP 10 Install MariaDB 10.3 stable package
 MariaDB is developed as open source software and as a relational database it provides an SQL interface for accessing data.
 
-    sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
-    sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://ftp.icm.edu.pl/pub/unix/database/mariadb/repo/10.3/ubuntu focal main'
+    sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc' #optional
+    sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://ftp.icm.edu.pl/pub/unix/database/mariadb/repo/10.3/ubuntu focal main' #optional
     sudo apt update && sudo apt upgrade -y
     sudo apt install mariadb-server -y
      
