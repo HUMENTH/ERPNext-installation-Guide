@@ -1,4 +1,4 @@
-# ERPNext-installation-Guide
+# ERPNext-Installation-Guide
 ## The complete guide to install ERPNext in your Ubuntu (20.04) system
 
 ### Pre-requisites 
